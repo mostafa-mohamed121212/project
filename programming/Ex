@@ -1,0 +1,22 @@
+class Operation:
+    def execute(self, a, b):
+        pass
+
+class Addition(Operation):
+    def execute(self, a, b):
+        return a + b
+
+class Subtraction(Operation):
+    def execute(self, a, b):
+        return a - b
+
+class Calculator:
+    def _init_(self, operation: Operation):
+        self.operation = operation
+
+    def calculate(self, a, b):
+        return self.operation.execute(a, b)
+
+addition = Addition()
+calculator = Calculator(addition)
+print(calculator.calculate(5, 3))
